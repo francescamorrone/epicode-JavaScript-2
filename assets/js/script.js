@@ -127,6 +127,9 @@ console.log(vuoto.length);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let carrello = ["Penna", "Quaderno", "Zaino", "Astuccio"];
+carrello.splice(1, 1, "Diario");
+console.log(carrello);
 
 
 /* ESERCIZIO 10 — Cerca un articolo
@@ -137,6 +140,19 @@ console.log(vuoto.length);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+let prodotti = ["Penna", "Quaderno", "Zaino"];
+let cercato = "Zaino";
+let presente = prodotti.includes(cercato);
+
+console.log(`${cercato} è in carrello: ${presente}`);
+
+if (presente) {
+   console.log(prodotti.indexOf("Zaino"));
+} else {
+   console.log(`Non è in carrello`);
+}
+
 
 /* ESERCIZIO 11 — Lista utenti
    Array utenti di 3 oggetti { nome, eta }.
