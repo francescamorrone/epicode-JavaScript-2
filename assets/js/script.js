@@ -12,6 +12,14 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const persona = {
+   nome: "Francesca",
+   cognome: "Morrone",
+   eta: 27,
+   citta: "Napoli",
+};
+
+console.log(`${persona.nome} ${persona.cognome}, ${persona.eta} anni, vive a ${persona.citta}.`);
 
 /* ESERCIZIO 2 — Aggiungi e rimuovi
    Sull'oggetto 'persona': aggiungi 'email', poi rimuovi 'eta'.
@@ -19,6 +27,9 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+persona.email = "email@fake.it";
+delete persona.eta;
+console.log(persona);
 
 /* ESERCIZIO 3 — Oggetto annidato
    Oggetto 'utente' con una proprietà 'indirizzo' (oggetto con via, citta, cap).
@@ -26,6 +37,15 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const utente = {
+   indirizzo: {
+      via: "Roma",
+      citta: "Napoli",
+      cap: 10101,
+   },
+};
+
+console.log(utente.indirizzo.cap);
 
 /* ESERCIZIO 4 — Bracket dinamica
    Sull'oggetto 'persona', variabile chiave = 'nome'.
@@ -33,6 +53,7 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(persona["nome"]);
 
 /* ESERCIZIO 5 — Numero più grande
    Tre numeri a, b, c.
@@ -40,6 +61,19 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let num1 = 100;
+let num2 = 10;
+let num3 = 10;
+
+if (num1 > num2 && num1 > num3) {
+   console.log(`${num1} è è più grande di ${num2} e ${num3}`);
+} else if (num2 > num1 && num2 > num3) {
+   console.log(`${num2} è più grande di ${num1} e ${num3}`);
+} else if (num3 > num2 && num3 > num1) {
+   console.log(`${num3} è è più grande di ${num1} e ${num2}`);
+} else {
+   console.log(`Pareggio`);
+};
 
 /* ESERCIZIO 6 — E-commerce: spedizione
    Variabile 'totale'.
@@ -49,6 +83,22 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let totale;
+totale = 35.00;
+let spedizione = 9.90;
+let totaleFinale = totale + spedizione;
+
+if (totale >= 50) {
+   console.log(`Totale carrello: ${totale}€ - Spedizione gratuita`);
+} else {
+   console.log(`Totale carrello: ${totale}€ - Spedizione: ${spedizione}€ — Totale finale: ${totaleFinale}€`)
+}
+
+let messaggioCarrello = totale >= 50
+   ? `Totale carrello: ${totale}€ - Spedizione gratuita`
+   : `Totale carrello: ${totale}€ - Spedizione: ${spedizione}€ — Totale finale: ${totaleFinale}€`;
+console.log(messaggioCarrello);
+
 
 /* ESERCIZIO 7 — typeof check
    Crea un array con 3 valori diversi (es. [42, 'ciao', true]).
@@ -56,12 +106,19 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
    Stampa array e length.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let vuoto = [];
+vuoto.push(1, 2, 3, 4, 5);
+vuoto.unshift(0);
+console.log(vuoto.length);
+
 
 /* ESERCIZIO 9 — Carrello con splice
    Array ['Penna', 'Quaderno', 'Zaino', 'Astuccio'].
@@ -70,6 +127,7 @@ REGOLE
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
 
 /* ESERCIZIO 10 — Cerca un articolo
    Array prodotti = ['Penna', 'Quaderno', 'Zaino'].
