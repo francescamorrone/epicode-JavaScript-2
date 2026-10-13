@@ -41,7 +41,7 @@ const utente = {
    indirizzo: {
       via: "Roma",
       citta: "Napoli",
-      cap: 10101,
+      cap: "10101",
    },
 };
 
@@ -53,7 +53,8 @@ console.log(utente.indirizzo.cap);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-console.log(persona["nome"]);
+let chiave = "nome";
+console.log(persona[chiave]);
 
 /* ESERCIZIO 5 — Numero più grande
    Tre numeri a, b, c.
@@ -83,20 +84,21 @@ if (num1 > num2 && num1 > num3) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let totale;
-totale = 35.00;
-let spedizione = 9.90;
-let totaleFinale = totale + spedizione;
+let totale = 35.00;
+let spedizione;
 
 if (totale >= 50) {
-   console.log(`Totale carrello: ${totale}€ - Spedizione gratuita`);
+   spedizione = 0;
+   console.log(`Totale carrello: ${totale}€ - Spedizione gratuita - totale finale ${totale + spedizione}`);
 } else {
-   console.log(`Totale carrello: ${totale}€ - Spedizione: ${spedizione}€ — Totale finale: ${totaleFinale}€`)
+   spedizione = 9.9;
+   console.log(`Totale carrello: ${totale}€ - Spedizione gratuita - totale finale ${totale + spedizione}`);
 }
 
+
 let messaggioCarrello = totale >= 50
-   ? `Totale carrello: ${totale}€ - Spedizione gratuita`
-   : `Totale carrello: ${totale}€ - Spedizione: ${spedizione}€ — Totale finale: ${totaleFinale}€`;
+   ? `Totale carrello: ${totale}€ - Spedizione gratuita - totale finale ${totale + 0}`
+   : `Totale carrello: ${totale}€ - Spedizione gratuita - totale finale ${totale + 9.9}`;
 console.log(messaggioCarrello);
 
 
@@ -107,6 +109,16 @@ console.log(messaggioCarrello);
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const myArr = [42, "ciao", true];
+
+for (let i = 0; i < myArr.length; i++) {
+   if (typeof myArr[i] === "number") {
+      console.log(`${myArr[i]} è un numero`);
+   } else {
+      console.log(`${myArr[i]} non è un numero`);
+   }
+}
+
 
 /* ESERCIZIO 8 — Array dei numeri
    Array vuoto. Aggiungi 1..5 con push. Aggiungi 0 all'inizio con unshift.
@@ -114,7 +126,7 @@ console.log(messaggioCarrello);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let vuoto = [];
+const vuoto = [];
 vuoto.push(1, 2, 3, 4, 5);
 vuoto.unshift(0);
 console.log(vuoto.length);
@@ -127,8 +139,10 @@ console.log(vuoto.length);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
-let carrello = ["Penna", "Quaderno", "Zaino", "Astuccio"];
-carrello.splice(1, 1, "Diario");
+const carrello = ["Penna", "Quaderno", "Zaino", "Astuccio"];
+carrello.splice(1, 1);
+console.log(carrello);
+carrello.splice(1, 0, "Diario");
 console.log(carrello);
 
 
@@ -144,11 +158,11 @@ console.log(carrello);
 let prodotti = ["Penna", "Quaderno", "Zaino"];
 let cercato = "Zaino";
 let presente = prodotti.includes(cercato);
-
 console.log(`${cercato} è in carrello: ${presente}`);
 
 if (presente) {
-   console.log(prodotti.indexOf(cercato));
+   let cercaZaino = prodotti.indexOf(cercato);
+   console.log(cercaZaino);
 } else {
    console.log(`Non è in carrello`);
 }
