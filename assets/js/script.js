@@ -148,7 +148,7 @@ let presente = prodotti.includes(cercato);
 console.log(`${cercato} è in carrello: ${presente}`);
 
 if (presente) {
-   console.log(prodotti.indexOf("Zaino"));
+   console.log(prodotti.indexOf(cercato));
 } else {
    console.log(`Non è in carrello`);
 }
