@@ -174,6 +174,27 @@ if (presente) {
    Aggiungi console.table(utenti) alla fine.
 */
 
+const users = [
+   {
+      nome: "Vincenzo",
+      eta: 27
+   }, 
+   {
+      nome: "Francesca",
+      eta: 20
+   },
+   {
+      nome: "Emanuele",
+      eta: 18
+   }
+]
+
+for(let i = 0; i < users.length; i++) {
+   console.log(`${users[i].nome} (${users[i].eta} anni)`);
+}
+
+console.table(users);
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 12 — Inventario disponibili
@@ -185,6 +206,38 @@ if (presente) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const inventario = [
+   {
+      nome: "sedia",
+      prezzo: 12000,
+      disponibile: true
+   },
+      {
+      nome: "lampada",
+      prezzo: 5,
+      disponibile: true
+   },
+      {
+      nome: "coniglio",
+      prezzo: 3,
+      disponibile: false
+   },
+      {
+      nome: "carota",
+      prezzo: 1,
+      disponibile: true
+   }
+];
+
+for( let i = 0; i < inventario.length; i++){
+   if( inventario[i].disponibile && inventario[i].prezzo < 10) {
+      console.log(`OFFERTA: ${inventario[i].nome} (${inventario[i].prezzo}€)`)
+   } else if(inventario[i].disponibile && inventario[i].prezzo >= 10) {
+       console.log(`${inventario[i].nome} - ${inventario[i].prezzo}€`)
+   } else {
+      console.log(`${inventario[i].nome} non disponibile`)
+   }
+}
 
 /* --EXTRA-- ESERCIZIO 13 — Reverse manuale
    Array [1, 2, 3, 4, 5].
@@ -194,3 +247,13 @@ if (presente) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const numbers = [1, 2, 3, 4, 5];
+const inverso = []
+
+for(let i = numbers.length-1 ; i >= 0; i--) {
+   inverso.push(numbers[i])
+}
+
+for(let i = 0; i < inverso.length; i++ ) {
+   console.log(inverso[i])
+}
